@@ -16,25 +16,44 @@
   <div class="color blue" id="blue"></div>
 </div>
 <script>
-/*Succession d'événement entrée et sortie de la souris suivie des fonctions qui ont pour action de changer la couleur de police du texte en fonction du bouton*/
-    $('#green').mouseover(function () {
-      $('#texte').css('color', 'green');
+// Méthode en deux fonction :
+$(function () {
+  // Déclaration de la fonction mouseover
+$('.color').mouseover(function () {
+/* Récupération de l'id #texte puis changement de la class .color (class
+ commune au 3 div) en indiquant que si nous plaçons la souris sur CE
+ bouton $(this) dont le nom de l'id est une couleur alors le texte
+ prend cette couleur*/
+  $('#texte').css('color', $(this).attr('id'));
+});
+$('.color').mouseout(function () {
+  $('#texte').css('color', 'black');
+});
+});
+/* Méthode en plusieurs fonctions :
+- Succession d'événement entrée et sortie de la souris suivie des 
+fonctions qui ont pour action de changer la couleur de police
+du texte en fonction du bouton :
+$(function () {
+  $('#green').mouseover(function () {
+    $('#texte').css('color', 'green');
   });
-    $('#green').mouseout(function () {
-      $('#texte').css('color', 'black');
-});
-    $('#red').mouseover(function () {
-      $('#texte').css('color', 'red');
-});
-    $('#red').mouseout(function () {
-      $('#texte').css('color', 'black');
-});
-    $('#blue').mouseover(function () {
-      $('#texte').css('color', 'blue');
-});
-    $('#blue').mouseout(function () {
-      $('#texte').css('color', 'black');
-});
+  $('#green').mouseout(function () {
+    $('#texte').css('color', 'black');
+  });
+  $('#red').mouseover(function () {
+    $('#texte').css('color', 'red');
+  });
+  $('#red').mouseout(function () {
+    $('#texte').css('color', 'black');
+  });
+  $('#blue').mouseover(function () {
+    $('#texte').css('color', 'blue');
+  });
+  $('#blue').mouseout(function () {
+    $('#texte').css('color', 'black');
+  });
+});*/
 </script>
 </body>
 </html>

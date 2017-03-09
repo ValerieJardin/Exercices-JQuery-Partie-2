@@ -8,9 +8,12 @@
   <body>
       <img src="images/image.jpg" id="image" />
       <script>
+    $(function () {
       $('#image').dblclick(function () { // événement double click qui conduit à changer la taille de l'image avec la fonction css
-        $('#image').css('width', '500px');
-      })
+      $('#image').css('width', '500px');
+      // autre méthode $('img').dblclick(function(){ $(this).width('500px');}); dès que l'on doubleclic sur une image peu importe laquelle, elle sera redimensionnée  
+    });
+    });
       </script>
   </body>
 </html>

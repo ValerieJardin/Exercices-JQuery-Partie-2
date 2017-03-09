@@ -11,12 +11,13 @@
   <p>Tara, originellement nommée Antarctica puis Seamaster, est une goélette française destinée à la fois à l'exploration et à la défense de l'environnement. Dans le cadre de l'Année polaire internationale, en 2007-2008, ce voilier est utilisé en Arctique par l'expédition Tara Arctic dans le but de faire des relevés permettant de mieux comprendre les changements climatiques qui s'opèrent en Arctique. En 2009, dans le cadre de l'expédition Tara Oceans, Tara parcourt les mers et les océans dans une circumnavigation de trois ans afin d'étudier le piégeage des molécules de gaz carbonique (CO2) par les micro-organismes marins comme le plancton. En avril 2016, une nouvelle expédition est montée Tara Pacific dont l'objectif est de comprendre le corail, menacé par des facteurs humains et climatiques1.</p>
   </div>
   <div>
-  <div class="color green" id="green"></div>
+  <div class="color green" id="green"></div> <!--espace entre color et green signifie qu'il y a 2 class -->
   <div class="color red" id="red"></div>
   <div class="color blue" id="blue"></div>
 </div>
 <script>
-/*Succession d'événements click suivis des fonctions css qui changent la couleur de la police en fonction du bouton*/
+$(function () {
+  /*Succession d'événements click suivis des fonctions css qui changent la couleur de la police en fonction du bouton*/
   $('#green').click(function(){
     $('#texte').css('color', 'green');
   });
@@ -26,6 +27,15 @@
   $('#blue').click(function(){
     $('#texte').css('color', 'blue');
   });
+});
+/* Méthode en une fonction :
+$('.color').click(function(){
+$('#texte').css('color', $(this).attr('id'))
+});
+Color est la class commune donc il faut faire l'événement click sur cette class
+Nous récupérons l'id texte puis nous changeons la couleur dès que l'on clic
+sur le bon bouton càd que nous récupérons l'id qui est un attribu d'ou la
+fonction attr() */
 </script>
 </body>
 </html>

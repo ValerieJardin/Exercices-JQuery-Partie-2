@@ -12,12 +12,12 @@
     <button type="button" name="button" >Envoyer</button>
   </form>
   <script>
-  /*Déclaration des div input suivie des fonctions gain ou perte de focus.*/
-  $('input').focus(function () {
-      $('input').css('border', '1px solid green');
+  /*Déclaration des id suivie des fonctions gain ou perte de focus.*/
+  $('#nom', '#prenom').focus(function () {
+      $(this).css('border', '1px solid green');
   });
-  $('input').blur(function () {
-      $('input').css('border', '1px solid red');
+  $('#nom', '#prenom').blur(function () {
+      $(this).css('border', '1px solid red');
   });
   </script>
 </body>
